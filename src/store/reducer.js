@@ -20,7 +20,7 @@ const getStockData = (state, action) => {
 	if (!stockSymbol) {
 		return updateObject(state, {currentStock: null});
 	}
-	const currentStock = getStockDataBySymbol(stockSymbol);
+	const currentStock = getStockDataBySymbol(stockSymbol, action.numPosts);
 	return updateObject(state, {currentStock: currentStock});
 }
 

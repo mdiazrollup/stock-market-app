@@ -1,0 +1,18 @@
+.StocksPosts{
+    margin-top: 50px;
+}
+
+.StocksPosts h3{
+    text-align: center;
+    font-size: 16px;
+}
+
+.NoPostsMessage {
+    background-color: rgb(0,66, 118, 0.8);
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}

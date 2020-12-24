@@ -5,11 +5,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .Stockform label {
     font-weight: bold;
     color: #004276;
+    min-width: 140px;
 }
 
 .Stockform select {
@@ -18,4 +20,38 @@
     margin-left: 10px;
     padding: 5px;
     flex: auto;
+}
+
+.Stockform input {
+    min-width: 100px;
+    border: 1px solid#cccccc;
+    margin-left: 10px;
+    padding: 5px;
+    flex: auto;
+}
+
+.Stockform button {
+    background-color: #004276;
+    color: #ffffff;
+    border: 1px solid #004276;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.Stockform button:hover {
+    background-color: #ffffff;
+    color: #004276;
+}
+
+.Invalid input,
+.Invalid select {
+    border-color: #ff0000;
+}
+
+.ErrorBox{
+    background-color: rgb(255,0, 0, 0.5);
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
 }

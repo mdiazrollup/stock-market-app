@@ -1,0 +1,22 @@
+.Post {
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.Post p {
+    margin: 0;
+}
+
+.Network {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.User {
+    font-weight: bold;
+    color: #004276;
+    margin-bottom: 10px;
+}

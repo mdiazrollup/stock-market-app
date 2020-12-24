@@ -1,10 +1,13 @@
 import { stockData } from "../data/stocks";
-import {socialNetwoks, timeWindows, maxPosts, maxPrice, marketOptions} from '../share/constants';
+import {postsData} from '../data/posts';
+import {socialNetwoks, timeWindows, 
+    maxPosts, maxPrice,
+    marketOptions} from '../share/constants';
 import moment from 'moment';
 
 export const getStocksData = () => stockData;
 
-export const getStockDataBySymbol = (stockSymbol) => {
+export const getStockDataBySymbol = (stockSymbol, numPosts) => {
     const dates = generateDates(timeWindows);
     const socialNetworksPosts = socialNetwoks.map(network => {
         return {
@@ -14,12 +17,13 @@ export const getStockDataBySymbol = (stockSymbol) => {
     });
     const prices = stockPriceGenerator(stockSymbol, dates);
     const rating = recommendationAlgorithm(prices,socialNetworksPosts);
-
     return {
         symbol: stockSymbol,
+        numPosts: numPosts,
         timeWindows: timeWindows,
         socialNetworksPosts: socialNetworksPosts,
-        recommentations: rating
+        recommentations: rating,
+        posts: getPosts(numPosts)
     };
 };
 
@@ -59,6 +63,7 @@ const recommendationAlgorithm = (stockPrices, socialMediaCounts) => {
     });
 };
 
+// Return the index of the date with max and min profit to sell and buy
 const getMaxAndMinProfitIndex = (prices) => {
     let minIdx = 0;
     let maxIdx = 1;
@@ -92,6 +97,7 @@ const getMaxAndMinProfitIndex = (prices) => {
     };
 }
 
+// Generate dates in the future given a timeWindows
 const generateDates = (maxDates) => {
     let currentDate = moment();
     let dates = [];
@@ -102,3 +108,13 @@ const generateDates = (maxDates) => {
     }
     return dates;
 }
+
+const getPosts = (numPosts) => {
+    const posts = [];
+    const totalPosts = postsData.length;
+    for(let i=0; i < numPosts; i++) {
+        const index = Math.floor(Math.random() * totalPosts);
+        posts.push(postsData[index]);
+    }
+    return posts;
+};

@@ -7,11 +7,9 @@ const stocksSelector = props => {
     const isSelectedStock = props.selectedStock != null;
     const stockInfo = (isSelectedStock) ? <StockInfo selectedStock={props.selectedStock}></StockInfo> : null;
 
-    console.log(isSelectedStock);
-
     return (
         <Aux>
-            <StocksForm stocks={props.stocks} onStockSelected={props.onStockSelected}></StocksForm>
+            <StocksForm stocks={props.stocks} onFormCompleted={props.onFormCompleted} ></StocksForm>
             { stockInfo}
         </Aux>
     );
