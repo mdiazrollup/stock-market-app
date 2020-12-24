@@ -9,6 +9,8 @@ In the project directory, you can run:
 `npm install`
 `npm start`
 
+Application visible at [http://localhost:3000](http://localhost:3000).
+
 ## The problem
 
 Behavioral Finance is an exciting field and you’ve decided to jump in with an idea for your new start up.
