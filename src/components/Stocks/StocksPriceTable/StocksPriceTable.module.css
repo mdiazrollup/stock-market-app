@@ -1,0 +1,82 @@
+.StockPriceTable {
+    margin-top: 50px;
+}
+
+.StockPriceTable h3{
+    text-align: center;
+    font-size: 16px;
+}
+
+.TableContainer {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 100%;
+}
+
+.TableContainer div{
+    box-sizing: border-box;
+}
+
+.FlexTable{
+    display: flex;
+    flex-flow: row wrap;
+    border-left: solid 1px #004276;
+}
+
+.FlexTable:first-of-type {
+    border-top: solid 1px #004276;
+    border-left: solid 1px #004276;
+}
+
+.FlexTable:first-of-type .FlexRow{
+    background: #004276;
+    color: #ffffff;
+    border-color: #004276;
+}
+
+.FlexTable.Row:nth-child(odd) .FlexRow {
+    background: #f4f2f1;
+}
+
+.FlexRow {
+    width: calc(100% / 3);
+    text-align: center;
+    padding: 0.5em 0.5em;
+    border-right: solid 1px #004276;
+    border-bottom: solid 1px #004276;
+}
+
+@media all and (max-width: 767px) {
+    .FlexRow{
+      width: calc(100% / 2);
+    }
+
+    .FlexRow.First {
+        width: 100%;
+    }
+  }
+  
+  @media all and (max-width: 430px) {
+    
+    .FlexTable .FlexRow {
+        border-bottom: 0;
+    }
+
+    .FlexTable .FlexRow:last-of-type {
+        border-bottom: solid 1px #d9d9d9;
+    }
+    
+    .Header .FlexRow {
+        border-bottom: solid 1px;
+    }
+    
+    .FlexRow {
+      width: 100%;
+    }
+
+    .FlexRow .First {
+        width: 100%;
+       border-bottom: solid 1px #d9d9d9;
+    }
+  }

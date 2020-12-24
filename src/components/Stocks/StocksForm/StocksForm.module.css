@@ -1,0 +1,21 @@
+
+.Stockform fieldset {
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Stockform label {
+    font-weight: bold;
+    color: #004276;
+}
+
+.Stockform select {
+    min-width: 100px;
+    border-color: #cccccc;
+    margin-left: 10px;
+    padding: 5px;
+    flex: auto;
+}
