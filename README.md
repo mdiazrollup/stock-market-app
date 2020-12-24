@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Stock Market Recommender
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application is build with react and redux.
 
-## Available Scripts
+## How to run the application
 
 In the project directory, you can run:
 
-### `npm start`
+`npm install`
+`npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The problem
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Behavioral Finance is an exciting field and you’ve decided to jump in with an idea for your new start up.
+In an earlier experimentation you’ve noticed a correlation between the various social media posts on a
+stock symbol and that share price for that stock symbol.
 
-### `npm test`
+You’ve decided to build an app that can provide a buy, hold or sell recommendation when given a stock
+symbol. The recommendation adjusts itself based on data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Unfortunately, there are multiple challenges around building this app. However, as a smart CTO, you’ve
+realized that things must be done in parallel. While you look at building your backend, you’ve decided to
+start working on the frontend today.
 
-### `npm run build`
+## The solution
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- We have initial mock data as json files on the data folder for the available stocks and social network posts.
+- The user must select an available stock and the numbers of posts to be display.
+- After the form is submitted the data for prices, number of posts and recommendations are generated randomly.
+- The information for the selected stock is updated asynchronosly every 5 seconds to show the new prices, posts and recommendations.
+- We build a service layer in order to be changed once the backend is developed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## About the accessibility
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The application use contrasts colors which guarantee a visually impaired person can use it. Tested using [https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/).
+- The application form can be use by keyboard.
+- We set the ARIA necessary in the diferent html tags.
+- We set the inital focus in our react application in order to guarantee the application is used on components mounted.
+- Other react accessibility recomendations [https://reactjs.org/docs/accessibility.html#standards-and-guidelines](https://reactjs.org/docs/accessibility.html#standards-and-guidelines).
 
-### `npm run eject`
+## Suggested improvements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- PropTypes need to be added to the application in order to define the properties expected by the components.
+- Unit tests need to be implemented.
+- Better error handling for form.
+- Use a style preprocessor as Sass to build the css.
+- Dynamic integration of social medias.
+- Graph for recommendations.
